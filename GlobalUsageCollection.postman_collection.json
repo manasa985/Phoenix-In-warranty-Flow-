@@ -1,0 +1,20 @@
+{
+	"info": {
+		"_postman_id": "2a7e7074-b388-4fea-a8aa-588b63a3e243",
+		"name": "GlobalUsageCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26150617",
+		"_collection_link": "https://phoenix-6709.postman.co/workspace/SDET~0e84f97d-5517-477d-9ed1-c4fc6bab2b05/collection/26150617-2a7e7074-b388-4fea-a8aa-588b63a3e243?action=share&source=collection_link&creator=26150617"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://www.google.com"
+			},
+			"response": []
+		}
+	]
+}
