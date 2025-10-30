@@ -1,0 +1,37 @@
+name: Postman Collection Workflow
+
+on:
+  push:
+    branches: [main] # we can use -main -dev -qa for muiltiple branches 
+  workflow_dispatch: # used for manual execution 
+  schedule: 
+    - cron : 30 02 * * * # Run every day at 8am IST 
+    - cron : 30 14 * * * # run at 7.00pm IST
+    - cron : 00 06 * * 1-4 # run at 11.30 am IST monday to Thursday
+
+jobs: 
+  run-postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      -name: checkout the code 
+       user: actions/checkout@v5.0.0
+
+      -name: Install nodejs and npm
+       user: actions/setup-node@v6.0.0
+        with:
+          node-version: '22'
+
+      -name: Install newman and html-extra-reporter globally
+       run: |
+            npm install -g newman 
+            npm install -g newman-reporter-htmlextra
+
+      -name: Run the postman collection with newman
+       run: |
+            newman run Inwarrenty_flow_Collection.postman_collection.json \
+            -e QA_Env_postman_environment.json \
+            -r cli,htmlextra
+
+    
