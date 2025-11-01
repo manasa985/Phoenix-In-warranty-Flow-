@@ -14,22 +14,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout the code 
+        uses: actions/checkout@v5.0.0
 
-      -name: checkout the code 
-       uses: actions/checkout@v5.0.0
-
-      -name: Install nodejs and npm
-       uses: actions/setup-node@v6.0.0
+      - name: Install nodejs and npm
+        uses: actions/setup-node@v6.0.0
         with:
           node-version: '22'
 
-      -name: Install newman and html-extra-reporter globally
-       run: |
+      - name: Install newman and html-extra-reporter globally
+        run: |
             npm install -g newman 
             npm install -g newman-reporter-htmlextra
 
-      -name: Run the postman collection with newman
-       run: |
+      - name: Run the postman collection with newman
+        run: |
             newman run Inwarrenty_flow_Collection.postman_collection.json \
             -e QA_Env_postman_environment.json \
             -r cli,htmlextra
