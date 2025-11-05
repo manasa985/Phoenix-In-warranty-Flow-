@@ -33,4 +33,10 @@ jobs:
             -e QA_Env_postman_environment.json \
             -r cli,htmlextra
 
+      - name: Newman Report # Archiving the newman repaorts using build artifacts
+        uses: actions/upload-artifact@v5.0.0
+        with:
+          name: Newman Reports
+          path: newman/*.html
+
     
