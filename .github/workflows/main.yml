@@ -34,6 +34,7 @@ jobs:
             -r cli,htmlextra
 
       - name: Newman Report # Archiving the newman repaorts using build artifacts
+        if: always() #ensures the archive section is generated irespective of the test passes or fails 
         uses: actions/upload-artifact@v5.0.0
         with:
           name: Newman Reports
