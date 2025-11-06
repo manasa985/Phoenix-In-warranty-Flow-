@@ -55,7 +55,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465u
           username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD 
+          password: ${{ secrets.EMAIL_PASSWORD }}
           subject: phoenis InwarrantyFlow Execution notification 
           to: saanviphx@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
