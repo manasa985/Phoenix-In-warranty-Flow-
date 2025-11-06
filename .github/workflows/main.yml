@@ -31,7 +31,8 @@ jobs:
         run: |
             newman run Inwarrenty_flow_Collection.postman_collection.json \
             -e QA_Env_postman_environment.json \
-            -r cli,htmlextra
+            -r cli,htmlextra \
+            --reporter-htmlextra-export ./newman/index.html
 
       - name: Newman Report # Archiving the newman repaorts using build artifacts
         if: always() #ensures the archive section is generated irespective of the test passes or fails 
