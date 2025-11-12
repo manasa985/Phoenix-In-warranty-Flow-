@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout the code 
+      - name: checkout the code
         uses: actions/checkout@v5.0.0
 
       - name: Install nodejs and npm
@@ -56,7 +56,7 @@ jobs:
           server_port: 465u
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: phoenis InwarrantyFlow Execution notification 
+          subject: phoenix InwarrantyFlow Execution notification 
           to: saanviphx@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: !
