@@ -5,9 +5,9 @@ on:
     branches: [main] # we can use -main -dev -qa for muiltiple branches 
   workflow_dispatch: # used for manual execution 
   schedule: 
-    - cron : 30 02 * * * # Run every day at 8am IST 
-    - cron : 30 14 * * * # run at 7.00pm IST
-    - cron : 00 06 * * 1-4 # run at 11.30 am IST monday to Thursday
+   # - cron : 30 02 * * * # Run every day at 8am IST 
+   #- cron : 30 14 * * * # run at 7.00pm IST
+   # - cron : 00 06 * * 1-4 # run at 11.30 am IST monday to Thursday
 
 jobs: 
   run-postman-tests:
